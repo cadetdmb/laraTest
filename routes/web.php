@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/charts', 'ChartsController@index')->name('charts');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/tables', 'TablesController@index')->name('tables');
+Route::get('/navbar', 'NavbarController@index')->name('navbar');
+Route::get('/cards', 'CardsController@index')->name('cards');
+Route::get('/maps', 'MapsController@index')->name('maps');
+Route::get('maps/direction', 'MapsController@direction');
